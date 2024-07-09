@@ -1,4 +1,4 @@
-package abm.abmJava;
+package abm.abmjava;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
