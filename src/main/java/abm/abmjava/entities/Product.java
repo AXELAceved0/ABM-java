@@ -1,5 +1,7 @@
 package abm.abmjava.entities;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,5 +18,6 @@ public class Product {
     @Getter @Setter private Integer price;
 
    @ManyToOne @JoinColumn(name = "owner_id")
+   @JsonIgnoreProperties("products")
     @Getter @Setter private Client owner;
 }

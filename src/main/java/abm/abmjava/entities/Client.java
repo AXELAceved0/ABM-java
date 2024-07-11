@@ -1,5 +1,6 @@
 package abm.abmjava.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,6 +25,7 @@ public class Client {
     @Getter @Setter private List<Product> products;
 
     @OneToOne(mappedBy = "client")
+    @JsonIgnoreProperties("owner")
     @Getter @Setter private Cart cart;
 
 }

@@ -1,22 +1,35 @@
 package abm.abmjava.entities;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity @Table(name = "Invoice_items")
-@NoArgsConstructor @ToString @EqualsAndHashCode
+@Entity
+@Table(name = "invoice_items")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class InvoiceItem {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter @Setter private  Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Getter @Setter
+    @EqualsAndHashCode.Include
+    private Long id;
 
     @ManyToOne
-    @Getter @Setter private Invoice invoice;
+    @JoinColumn(name = "invoice_id")
+    @Getter @Setter
+    private Invoice invoice;
 
     @ManyToOne
-    @Getter @Setter Product product;
+    @JoinColumn(name = "product_id")
+    @Getter @Setter
+    private Product product;
 
-    @Getter @Setter private Integer quantity;
+    @Getter @Setter
+    private Integer quantity;
 
-    @Getter @Setter private  Double price;
+    @Getter @Setter
+    private Double price;
 }
