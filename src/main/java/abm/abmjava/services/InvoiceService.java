@@ -29,4 +29,3 @@ public class InvoiceService {
         invoiceRepository.deleteById(id);
     }
 }
-

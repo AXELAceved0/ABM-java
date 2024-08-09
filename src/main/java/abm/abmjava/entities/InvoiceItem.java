@@ -31,5 +31,6 @@ public class InvoiceItem {
     private Integer quantity;
 
     @Getter @Setter
-    private Double price;
+    private Double price; // Asegúrate de que sea Double
 }
+
